@@ -26,7 +26,7 @@ namespace AppViajes_HugoPoloGonzalez
         {
             this.InitializeComponent();
 
-            DataContext = new Viewmodel.MainViewModel();
+            DataContext = new AppViajes_HugoPoloGonzalez.Viewmodel.MainPageModel();
         }
     }
 }

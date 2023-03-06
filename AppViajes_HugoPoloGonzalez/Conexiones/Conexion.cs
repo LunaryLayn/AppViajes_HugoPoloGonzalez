@@ -59,7 +59,7 @@ namespace AppViajes_HugoPoloGonzalez.Conexiones
 
         public void CreateDatabase()
         {
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDAgenda.db");
+            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDViajes.db");
 
             //conn = new SQLite.Net.SQLiteConnection(new
             //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
@@ -89,7 +89,7 @@ namespace AppViajes_HugoPoloGonzalez.Conexiones
 
             //Añadimos los usuarios a la tabla
 
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDAgenda.db");
+            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDViajes.db");
 
             //conn = new SQLite.Net.SQLiteConnection(new
             //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
@@ -106,7 +106,7 @@ namespace AppViajes_HugoPoloGonzalez.Conexiones
             List<Viaje> ListaDeViajes =
                new List<Viaje>();
 
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDAgenda.db");
+            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDViajes.db");
 
             //conn = new SQLite.Net.SQLiteConnection(new
             //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
@@ -128,7 +128,7 @@ namespace AppViajes_HugoPoloGonzalez.Conexiones
 
             //Añadimos  Viaje a la tabla
 
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDAgenda.db");
+            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDViajes.db");
 
             //conn = new SQLite.Net.SQLiteConnection(new
             //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
@@ -148,43 +148,43 @@ namespace AppViajes_HugoPoloGonzalez.Conexiones
 
 
 
-        public void borrarViaje(int Identificador)
-        {
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDAgenda.db");
+         public void borrarViaje(int Identificador)
+         {
+             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDViajes.db");
 
-            //conn = new SQLite.Net.SQLiteConnection(new
-            //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+             //conn = new SQLite.Net.SQLiteConnection(new
+             //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
 
-            conn = new SQLite.SQLiteConnection(path);
+             conn = new SQLite.SQLiteConnection(path);
 
-            var Viaje = conn.Table<Viaje>().Where(x => x.Id == Identificador).FirstOrDefault();
-            if (Viaje != null)
-            {
-                conn.Delete(Viaje);
-            }
+             var Viaje = conn.Table<Viaje>().Where(x => x.Id == Identificador).FirstOrDefault();
+             if (Viaje != null)
+             {
+                 conn.Delete(Viaje);
+             }
 
-        }
+         }
 
-        /*public void modificarViaje(int Identificador, string nombre, string direccion, string telefono)
-        {
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDAgenda.db");
+         /*public void modificarViaje(int Identificador, string nombre, string direccion, string telefono)
+         {
+             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "BDViajes.db");
 
-            //conn = new SQLite.Net.SQLiteConnection(new
-            //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+             //conn = new SQLite.Net.SQLiteConnection(new
+             //SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
 
-            conn = new SQLite.SQLiteConnection(path);
+             conn = new SQLite.SQLiteConnection(path);
 
-            var Viaje = conn.Table<Viaje>().Where(x => x.Id == Identificador).FirstOrDefault();
-            if (Viaje != null)
-            {
-                Viaje.Nombre = nombre;
-                Viaje.Direccion = direccion;
-                Viaje.Telefono = telefono;
+             var Viaje = conn.Table<Viaje>().Where(x => x.Id == Identificador).FirstOrDefault();
+             if (Viaje != null)
+             {
+                 Viaje.Nombre = nombre;
+                 Viaje.Direccion = direccion;
+                 Viaje.Telefono = telefono;
 
-                conn.Update(Viaje);
-            }
+                 conn.Update(Viaje);
+             }
 
-        }*/
+         }*/
 
     }
 }
